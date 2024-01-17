@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from './pages/MainPage'
+import './assets/scss/global.scss'
+import { Routes, Route, HashRouter as Router } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<section className='main-layout'>
+				{/* <AppHeader /> */}
+
+				<main className='main-container-layout'>
+					<Routes>
+						<Route path='/' element={<MainPage />} />
+					</Routes>
+				</main>
+
+				<footer className='full footer flex auto-center'>
+					<section>Copyright 2023 &copy;</section>
+				</footer>
+			</section>
+		</Router>
+	)
 }
 
-export default App;
+export default App

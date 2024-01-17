@@ -1,0 +1,7 @@
+.episode-list {
+	overflow: auto;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+	grid-gap: 20px;
+}
