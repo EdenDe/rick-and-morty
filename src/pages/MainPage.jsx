@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadEpisodes, setFilterBy } from '../store/episode.action'
+import { loadEpisodes, setFilterBy } from '../store/actions/episode.action'
 import EpisodeList from '../components/EpisodeList'
 
 const MainPage = () => {

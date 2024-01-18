@@ -1,6 +1,7 @@
 import MainPage from './pages/MainPage'
 import './assets/scss/global.scss'
 import { Routes, Route, HashRouter as Router } from 'react-router-dom'
+import EpisodePage from './pages/EpisodePage'
 
 function App() {
 	return (
@@ -10,13 +11,10 @@ function App() {
 
 				<main className='main-container-layout'>
 					<Routes>
+						<Route path='/episode-page/:id' element={<EpisodePage />} />
 						<Route path='/' element={<MainPage />} />
 					</Routes>
 				</main>
-
-				<footer className='full footer flex auto-center'>
-					<section>Copyright 2023 &copy;</section>
-				</footer>
 			</section>
 		</Router>
 	)

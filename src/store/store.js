@@ -1,7 +1,13 @@
 import { thunk } from 'redux-thunk'
-import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux'
-import { episodeReducer } from './episode.reducer'
+import { applyMiddleware, combineReducers, compose, legacy_createStore as createStore } from 'redux'
+import { episodeReducer } from './reducers/episode.reducer'
+import { characterReducer } from './reducers/character.reducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export const store = createStore(episodeReducer, composeEnhancers(applyMiddleware(thunk)))
+const rootReducer = combineReducers({
+	episodeModule: episodeReducer,
+	characterModule: characterReducer,
+})
+
+export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
