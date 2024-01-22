@@ -2,24 +2,17 @@
 	box-sizing: border-box;
 }
 
-html {
-	font-family: Calibri, sans-serif;
-	font-size: 16px;
-	scroll-behavior: smooth;
-}
-
 body {
+	font-family: $rubik, Arial, sans-serif;
 	margin: 0;
+	padding: 0;
+	font-size: 16px;
 	height: 100vh;
-	background-size: cover;
-	font-family: Calibri, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-		'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
-img {
-	max-width: 100%;
+button,
+select {
+	cursor: pointer;
 }
 
 h1,
@@ -27,54 +20,28 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
 	margin: 0;
-	padding: 0;
 }
 
 a {
 	text-decoration: none;
+	color: unset;
+}
+
+p {
+	margin: 0 0 0.5em;
+}
+
+button,
+input,
+textarea,
+select {
+	font-family: inherit;
 	color: inherit;
-	// &:hover {
-	//   text-decoration: underline;
-	// }
-
-	&.active {
-		color: $clr1;
-	}
 }
 
-button {
-	font-family: inherit;
-	cursor: pointer;
-
-	* {
-		pointer-events: none;
-	}
-}
-
-input {
-	font-family: inherit;
-	text-align: inherit;
-}
-
-// MAC like scrollbar
-::-webkit-scrollbar {
-	width: 8px;
-	background-color: rgba(0, 0, 0, 0);
-	-webkit-border-radius: 100px;
-}
-
-::-webkit-scrollbar:hover {
-	background-color: rgba(0, 0, 0, 0.09);
-}
-
-::-webkit-scrollbar-thumb:vertical {
-	background: rgba($clr1, 0.5);
-	-webkit-border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:vertical:active {
-	-webkit-border-radius: 100px;
+::selection {
+	background-color: $clr4;
+	color: $clr2;
 }

@@ -1,22 +1,34 @@
 // Colors
-$clr0: #ffffff;
-$clr1: #01ffff;
-$clr2: #0083ed;
-$clr3: #015a8c;
-$clr4: #272b33;
+$clr1: #ffffff;
+$clr2: #e3e3eb;
+$clr3: rgb(155, 155, 155);
+$clr4: rgb(96, 96, 96);
+$clr5: #333333;
 
-$logo-clr: #f7931a;
+$rick-clr: #a3a3cd;
+$morty-clr: #b77748;
+$aura-clr: #6df059;
+
+$secondary-clr1: #fed5b3;
+
+$secondary-clr2: #6d59ff;
+$secondary-clr3: #000234;
+$secondary-clr4: #9da8b9;
+
+$logo-color: #b66d4d;
 $card-bg-clr: #3c3e44;
 
-// LAYOUT
-// $layoutPadding: 20px;
+//FONTS
+$rubik-light: 'rubik-light';
+$rubik: 'rubik';
+$rubik-bold: 'rubik-bold';
+$rubik-extraBold: 'rubik-extrabold';
+$rubik-burned: 'rubik-burned';
 
 // LAYOUT BREAKPOINTS
 $break-narrow: 600px;
 $break-normal: 768px;
 $break-wide: 900px;
-
-$navHeight: 65px;
 
 $layoutPaddingLarge: 100px;
 $layoutPaddingMedium: 80px;
@@ -31,3 +43,8 @@ $mobile-breakpoint: 600px;
 $tablet-breakpoint: 768px;
 $normal-breakpoint: 900px;
 $wide-breakpoint: 1080px;
+
+// OTHERS
+$navHeight: 65px;
+$box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302), 0 4px 8px 3px rgba(60, 64, 67, 0.149);
+$border-radius: 5px;

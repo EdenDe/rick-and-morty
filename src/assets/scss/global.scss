@@ -1,10 +1,10 @@
 // Setup
+@import 'basics/typography';
 @import 'setup/variables';
 @import 'setup/functions';
 @import 'setup/mixins';
 
 // Basics
-@import 'basics/typography';
 @import 'basics/base';
 @import 'basics/helpers';
 @import 'basics/layout';
@@ -13,16 +13,7 @@
 @import 'pages/main-page';
 
 // Components
-@import 'cmps/episode-preview';
+@import 'cmps/app-header';
 @import 'cmps/all-lists';
-
-.main-app {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-
-	main {
-		flex-grow: 1;
-		width: 100%;
-	}
-}
+@import 'cmps/episode-filter';
+@import 'cmps/episode-preview';

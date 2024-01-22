@@ -1,0 +1,39 @@
+.app-header {
+	display: grid;
+	height: 20vh;
+
+	h1 {
+		display: flex;
+		flex-wrap: wrap;
+		justify-self: center;
+		column-gap: 2vw;
+
+		text-align: center;
+
+		font-family: $rubik-extraBold;
+		font-size: clamp(rem(35px), 10vw, rem(80px));
+	}
+
+	span {
+		display: flex;
+		align-items: center;
+	}
+
+	span:nth-child(2) {
+		font-size: clamp(rem(15px), 5vw, rem(40px));
+		color: $aura-clr;
+		text-transform: uppercase;
+		font-family: $rubik-burned;
+	}
+
+	// img {
+	// 	padding: rem(16px);
+	// 	width: 100%;
+	// 	min-width: 330px;
+	// }
+
+	img {
+		width: inherit;
+		width: clamp(rem(40px), 10vw, rem(80px));
+	}
+}

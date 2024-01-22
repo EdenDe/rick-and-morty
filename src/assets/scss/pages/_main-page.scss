@@ -1,29 +1,20 @@
-.homepage{
-  place-self: center;
+.main-page {
+	height: 70vh;
+	overflow-y: scroll;
 
-  .homepage-details{
-    background-color: rgba($clr4,0.75);
-    border-radius: em(10px);
-    padding:em(30px) em(50px);
-    margin-bottom: em(25px);
-  }
+	/* custom scrollbar */
+	&::-webkit-scrollbar {
+		width: 10px;
+		border-radius: 100px;
+	}
 
-  .homepage-title{
-    font-size:em(27px);
-    margin-bottom: em(20px);
-    span{
-      font-weight:normal;
-    }
-  }
+	&::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+		border-radius: 100px;
+	}
 
-  .data-item{
-    display:grid;
-    grid-template-columns: 30px 1fr;
-    margin-bottom: em(10px);
-    font-size: em(18px);
-  }
-
-  .icon-wrapper{
-    color:$logo-clr;
-  }
+	&::-webkit-scrollbar-thumb {
+		background-color: lighten($color: $logo-color, $amount: 15);
+		border-radius: 100px;
+	}
 }

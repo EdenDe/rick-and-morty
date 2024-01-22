@@ -1,67 +1,106 @@
-/* Media queries Breakpoint mixins */
+@mixin btn($clr: transparent) {
+	background-color: $clr;
+	border: none;
+	border-radius: 10px;
+	padding: 0.5em;
+	cursor: pointer;
 
+	&:hover {
+		background-color: rgba(193, 190, 190, 0.515);
+		box-shadow: $box-shadow;
+	}
+}
+
+@mixin themeBtn {
+	color: $logo-color;
+	border-color: rgba($logo-color, 0.5);
+	background-color: lighten($color: $logo-color, $amount: 40);
+
+	&:hover {
+		background-color: $logo-color;
+		color: $clr1;
+		border-color: $logo-color;
+	}
+}
+
+@mixin link {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@mixin title {
+	background-color: rgba($clr2, 0.3);
+	border-radius: rem(7px);
+	width: fit-content;
+	margin: auto;
+	margin-top: rem(50px);
+	color: $clr5;
+
+	h2 {
+		font-size: clamp(14px, rem(40px), 5vw);
+		margin: 0;
+	}
+
+	h1 {
+		font-size: clamp(14px, rem(50px), 7vw);
+	}
+
+	> * {
+		padding: rem(15px) rem(30px);
+	}
+}
+
+@mixin input {
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+	border-radius: 0.3em;
+	outline: none;
+	border: none;
+
+	&:is(:focus, :hover) {
+		box-shadow: $box-shadow;
+	}
+}
+
+@mixin select {
+	border-radius: 0.5em;
+	outline: none;
+	border: none;
+
+	&:hover {
+		box-shadow: $box-shadow;
+	}
+}
+
+/* Media queries Breakpoint mixins */
 @mixin for-mobile-layout {
-	@media (max-width: $padded-break-narrow) {
+	@media (max-width: $break-narrow) {
 		@content;
 	}
 }
 
 @mixin for-narrow-layout {
-	@media (min-width: $padded-break-narrow) {
+	@media (min-width: $break-narrow) {
 		@content;
 	}
 }
 
 @mixin for-normal-layout {
-	@media (min-width: $padded-break-normal) {
+	@media (min-width: $break-normal) {
 		@content;
 	}
 }
 
 @mixin for-wide-layout {
-	@media (min-width: $padded-break-wide) {
+	@media (min-width: $break-wide) {
 		@content;
 	}
 }
 
-@mixin layoutGTC($max, $layoutPadding) {
+@mixin layoutGTC($max) {
 	grid-template-columns:
-		minmax(auto, $layoutPadding)
-		minmax($max, 1fr)
-		minmax(auto, $layoutPadding);
-}
-
-@mixin classic-btn($bgColor: transparent) {
-	background-color: $bgColor;
-	color: $clr0;
-	font-family: inherit;
-	border: none;
-	border-radius: em(5px);
-
-	&:hover {
-		color: $clr1;
-	}
-}
-
-@mixin classic-input($bgColor: white, $padding: 5px) {
-	padding: $padding;
-	border: none;
-	border-radius: 4px;
-	background-color: $bgColor;
-	color: $clr0;
-	font-size: em(16px);
-}
-
-@mixin spceial-btn {
-	background: linear-gradient(-45deg, $clr1, $clr2, $clr3, $clr4);
-	border: none;
-	padding: em(5px);
-	border-radius: 5px;
-	font-weight: bold;
-	background-size: 400% 400%;
-	animation: gradient-bg 10s ease infinite;
-
-	&:hover {
-		scale: 1.05;
-	}
+		minmax($layoutPadding, 1fr)
+		minmax(auto, $max)
+		minmax($layoutPadding, 1fr);
 }
