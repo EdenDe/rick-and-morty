@@ -15,14 +15,37 @@ const CharacterPage = () => {
 	console.log(character.episodeList)
 
 	return (
-		<div>
-			{character.name}
-			{character.status}
-			{character.species}
-			{character.episodeList?.map(episodeNum => {
-				return <p> {episodeNum} </p>
-			})}
-		</div>
+		<section className='character-page full-height'>
+			<div className='character-card flex'>
+				<div className='img-wrapper'>
+					<img src={character.image} alt={character.name} />
+				</div>
+				<div className='character-details flex flex-col'>
+					<h2>{character.name}</h2>
+					<div className='flex align-center'>
+						<h5> Status: </h5>
+						<span> {character.status}</span>
+					</div>
+					<div className='flex align-center'>
+						<h5> Species: </h5>
+						<span> {character.species}</span>
+					</div>
+
+					<div>
+						<h5> Was seen in episodes: </h5>
+						<div className='episode-num-list flex'>
+							{character.episodeList?.map((episodeNum, index) => {
+								return (
+									<span key={episodeNum + index}>
+										{episodeNum + (index === character.episodeList.length - 1 ? ' ' : ',')}
+									</span>
+								)
+							})}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	)
 }
 

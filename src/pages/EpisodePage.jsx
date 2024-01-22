@@ -22,7 +22,8 @@ const EpisodePage = () => {
 
 	return (
 		<section className='episode-page'>
-			<h2> {episode.name} </h2>
+			<h2>{episode.name}</h2>
+			<h3>{episode.air_date}</h3>
 			<AllLists data={characters} dataType='characters' />
 		</section>
 	)

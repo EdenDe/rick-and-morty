@@ -1,0 +1,9 @@
+.episode-page {
+	:is(h2, h3) {
+		margin-inline-start: rem(10px);
+	}
+
+	h2 {
+		font-size: em(30px);
+	}
+}

@@ -11,7 +11,7 @@ const EpisodeFilter = ({ onChangeFilter }) => {
 			closeDropdown()
 		}
 
-		return () => changeSeason()
+		changeSeason()
 	}, [currentSeason])
 
 	const closeDropdown = () => {
@@ -39,7 +39,7 @@ const EpisodeFilter = ({ onChangeFilter }) => {
 					<span className='arrow'></span>
 				</button>
 				<ul className='select-dropdown clean-list' role='listbox'>
-					<li onClick={() => setCurrentSeason('1')}>Season 1</li>
+					<li onClick={() => setCurrentSeason('1')}> Season 1</li>
 					<li onClick={() => setCurrentSeason('2')}>Season 2</li>
 					<li onClick={() => setCurrentSeason('3')}>Season 3</li>
 					<li onClick={() => setCurrentSeason('4')}>Season 4</li>

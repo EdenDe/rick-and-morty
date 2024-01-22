@@ -18,11 +18,9 @@ const MainPage = () => {
 	}
 
 	return (
-		<section className='main-page'>
+		<section className='main-page full-height'>
 			<EpisodeFilter onChangeFilter={onChangeFilter} />
-			<div className='custom-scrollbar'>
-				<AllLists data={episodes} dataType='episode' />
-			</div>
+			<AllLists data={episodes} dataType='episode' />
 		</section>
 	)
 }

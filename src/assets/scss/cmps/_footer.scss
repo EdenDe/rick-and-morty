@@ -1,0 +1,11 @@
+.footer {
+	height: 5vh;
+	display: grid;
+	justify-content: center;
+	background-color: $morty-clr;
+	color: $clr1;
+	font-size: rem(14px);
+	text-align: center;
+	padding: em(5px);
+	padding: rem(5px) 0;
+}

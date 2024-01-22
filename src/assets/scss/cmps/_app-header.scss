@@ -1,11 +1,11 @@
 .app-header {
-	display: grid;
-	height: 20vh;
+	height: 17vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	h1 {
 		display: flex;
-		flex-wrap: wrap;
-		justify-self: center;
 		column-gap: 2vw;
 
 		text-align: center;

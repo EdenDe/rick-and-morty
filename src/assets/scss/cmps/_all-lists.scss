@@ -1,6 +1,8 @@
-.simple-grid-list {
+.all-list {
+	height: calc($main-height - 10vh);
+
 	display: grid;
-	padding: em(10px);
+	padding: rem(10px);
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: em(10px);
 }

@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 
 const CharacterPreview = ({ character }) => {
 	return (
-		<div>
+		<section className='character-preview'>
 			<Link to={`/character-page/${character.id}`}>
-				<img src={character.image} alt={character.name} />
+				<div className='img-wrapper' data-name={character.name}>
+					<img src={character.image} alt={character.name} />
+				</div>
 			</Link>
-		</div>
+		</section>
 	)
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/img/Logo.png'
 import rick from '../assets/img/Rick.png'
 import morty from '../assets/img/Morty.png'
+import { Link } from 'react-router-dom'
 
 const AppHeader = () => {
 	const Logo = () => {
@@ -26,7 +27,9 @@ const AppHeader = () => {
 		<section className='app-header'>
 			{/* <img src={logo} /> */}
 			{/* <h1> Rick and Morty </h1> */}
-			<Logo />
+			<Link to='/'>
+				<Logo />
+			</Link>
 		</section>
 	)
 }
