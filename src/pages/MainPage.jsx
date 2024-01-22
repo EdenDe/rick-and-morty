@@ -20,8 +20,9 @@ const MainPage = () => {
 	return (
 		<section className='main-page'>
 			<EpisodeFilter onChangeFilter={onChangeFilter} />
-
-			<AllLists data={episodes} dataType='episode' />
+			<div className='custom-scrollbar'>
+				<AllLists data={episodes} dataType='episode' />
+			</div>
 		</section>
 	)
 }

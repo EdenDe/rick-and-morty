@@ -1,21 +1,32 @@
 .episode-preview {
-	background-color: $card-bg-clr;
-	box-shadow: 0 0 11px #0000002b;
+	background-color: $secondary-clr1;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
 	overflow: hidden;
 
 	position: relative;
-	height: 100px;
+	height: 120px;
+	padding: em(10px);
+	text-align: center;
 
 	&:hover {
 		opacity: 0.9;
 	}
 
-	a {
-		text-align: center;
-		cursor: pointer;
+	h2 {
+		font-family: $rubik-bold;
+
+		&:hover {
+			scale: 1.1;
+		}
 	}
 
-	&:hover h2 {
-		transform: translateY(0);
+	p {
+		margin-top: auto;
+
+		span {
+			font-family: $rubik-light;
+			margin-inline-start: em(10px);
+		}
 	}
 }

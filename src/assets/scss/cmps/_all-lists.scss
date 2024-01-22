@@ -1,7 +1,6 @@
 .simple-grid-list {
-	overflow: auto;
-
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+	padding: em(10px);
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: em(10px);
 }

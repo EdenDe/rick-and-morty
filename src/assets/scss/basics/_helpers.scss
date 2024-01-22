@@ -7,6 +7,28 @@
 	@include title;
 }
 
+/* CUSTOM SCROLLBAR */
+
+.custom-scrollbar {
+	height: 60vh;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		border-radius: 100px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $clr2;
+		border-radius: 100px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $rick-clr;
+		border-radius: 100px;
+	}
+}
+
 /* list helpers */
 .clean-list {
 	padding: 0;
@@ -19,20 +41,20 @@
 /* flex helpers */
 .flex {
 	display: flex;
-}
 
-.flex.flex-column {
-	flex-direction: column;
-}
+	&-col {
+		flex-direction: column;
+	}
 
-.flex.justify-center {
-	justify-content: center;
-}
+	&.justify-center {
+		justify-content: center;
+	}
 
-.flex.justify-between {
-	justify-content: space-between;
-}
+	&.justify-between {
+		justify-content: space-between;
+	}
 
-.flex.align-center {
-	align-items: center;
+	&.align-center {
+		align-items: center;
+	}
 }
