@@ -15,6 +15,10 @@
 		.character-details {
 			gap: em(10px);
 
+			> div {
+				flex-wrap: wrap;
+			}
+
 			h2 {
 				font-size: em(40px);
 				margin-bottom: auto;
