@@ -61,3 +61,24 @@
 	height: 100%;
 	overflow: hidden;
 }
+
+.btn-back {
+	font-size: em(20px);
+	font-family: $rubik-extraBold;
+	color: $morty-clr;
+	background-color: $secondary-clr1;
+	border-radius: 50%;
+	border: 3px solid $rick-clr;
+	padding: em(5px) em(10px);
+	margin: em(5px);
+
+	&:hover {
+		opacity: 0.8;
+		scale: 1.1;
+	}
+
+	@include for-mobile-layout {
+		font-size: em(15px);
+		padding: em(5px) em(10px);
+	}
+}

@@ -29,9 +29,16 @@ const CharacterPage = () => {
 		navigate(`/episode/${episode.id}/character/${character.prevCharacter.id}`)
 	}
 
+	const onBack = () => {
+		navigate(-1)
+	}
+
 	return (
-		<section className='character-page full-height'>
-			<div className='character-card flex justify-center align-center'>
+		<section className='character-page custom-scrollbar'>
+			<button className='btn-back' onClick={onBack}>
+				{'<'}
+			</button>
+			<div className='character-card'>
 				<div className='img-wrapper flex justify-center'>
 					<img src={character.image} alt={character.name} />
 				</div>

@@ -35,4 +35,16 @@
 
 .route-view {
 	height: $main-height;
+
+	@include for-mobile-layout {
+		height: $main-height + 5vh;
+	}
+}
+
+.app-header {
+	height: $header-height;
+
+	@include for-mobile-layout {
+		height: $header-height - 5vh;
+	}
 }

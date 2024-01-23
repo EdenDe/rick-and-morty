@@ -23,9 +23,7 @@ const AppHeader = () => {
 	}
 
 	return (
-		<section className='app-header'>
-			{/* <img src={logo} /> */}
-			{/* <h1> Rick and Morty </h1> */}
+		<section className='app-header flex justify-center align-center'>
 			<Link to='/'>
 				<Logo />
 			</Link>
