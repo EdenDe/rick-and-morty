@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/rick-and-morty/static/css/main.44d59a6f.css",
-    "main.js": "/rick-and-morty/static/js/main.40d591ac.js",
+    "main.css": "/rick-and-morty/static/css/main.62c9ee94.css",
+    "main.js": "/rick-and-morty/static/js/main.c382b03e.js",
     "static/media/RubikBurned-Regular.ttf": "/rick-and-morty/static/media/RubikBurned-Regular.507b1e4ab45c6ac0b408.ttf",
     "static/media/Rubik-Bold.ttf": "/rick-and-morty/static/media/Rubik-Bold.c934eb22c2c69992b34c.ttf",
     "static/media/Rubik-ExtraBold.ttf": "/rick-and-morty/static/media/Rubik-ExtraBold.1ab45dd33fc066882b45.ttf",
@@ -9,11 +9,11 @@
     "static/media/Rubik-Light.ttf": "/rick-and-morty/static/media/Rubik-Light.9d2ccd264dc61b954019.ttf",
     "static/media/Rick.png": "/rick-and-morty/static/media/Rick.42be89eb257939c95f32.png",
     "index.html": "/rick-and-morty/index.html",
-    "main.44d59a6f.css.map": "/rick-and-morty/static/css/main.44d59a6f.css.map",
-    "main.40d591ac.js.map": "/rick-and-morty/static/js/main.40d591ac.js.map"
+    "main.62c9ee94.css.map": "/rick-and-morty/static/css/main.62c9ee94.css.map",
+    "main.c382b03e.js.map": "/rick-and-morty/static/js/main.c382b03e.js.map"
   },
   "entrypoints": [
-    "static/css/main.44d59a6f.css",
-    "static/js/main.40d591ac.js"
+    "static/css/main.62c9ee94.css",
+    "static/js/main.c382b03e.js"
   ]
 }
