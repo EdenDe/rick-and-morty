@@ -38,7 +38,7 @@ export function setEpisode(episodeId) {
 	}
 }
 
-export function setCharacters(episodeNum) {
+export function setCharacters() {
 	return async (dispatch, getState) => {
 		try {
 			const episode = getState().currEpisode

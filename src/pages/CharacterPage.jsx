@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { setCharacter } from '../store/rick-morty.action'
 import { useDispatch, useSelector } from 'react-redux'
 
 const CharacterPage = () => {
 	const params = useParams()
+	const navigate = useNavigate()
+
 	const character = useSelector(storeState => storeState.currCharacter)
 	const dispatch = useDispatch()
 
@@ -12,12 +14,18 @@ const CharacterPage = () => {
 		dispatch(setCharacter(params.id))
 	}, [params.id])
 
-	console.log(character.episodeList)
+	const onNext = () => {
+		navigate(`/character/${character.nextCharacter.id}`)
+	}
+
+	const onPrev = () => {
+		navigate(`/character/${character.prevCharacter.id}`)
+	}
 
 	return (
 		<section className='character-page full-height'>
-			<div className='character-card flex'>
-				<div className='img-wrapper'>
+			<div className='character-card flex justify-center align-center'>
+				<div className='img-wrapper flex justify-center'>
 					<img src={character.image} alt={character.name} />
 				</div>
 				<div className='character-details flex flex-col'>
@@ -29,6 +37,10 @@ const CharacterPage = () => {
 					<div className='flex align-center'>
 						<h5> Species: </h5>
 						<span> {character.species}</span>
+					</div>
+					<div className='flex align-center'>
+						<h5> Last seen location: </h5>
+						<span> {character.location?.name}</span>
 					</div>
 
 					<div>
@@ -44,6 +56,14 @@ const CharacterPage = () => {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className='action-btn-wrapper flex justify-between'>
+				<button disabled={!!!character.prevCharacter} onClick={onPrev}>
+					PREVIOUS
+				</button>
+				<button disabled={!!!character.nextCharacter} onClick={onNext}>
+					NEXT
+				</button>
 			</div>
 		</section>
 	)

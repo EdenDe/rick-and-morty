@@ -11,10 +11,22 @@ const getAllEpisodes = async (filter = 'S01') => {
 const getCharacters = async charactersArr => {
 	try {
 		const filter = charactersArr.join(',')
-		const characters = await axios.get(`https://rickandmortyapi.com/api/character/${filter}`)
+		const { data: characters } = await axios.get(
+			`https://rickandmortyapi.com/api/character/${filter}`
+		)
 
-		if (!characters.data.length) return []
-		return characters.data
+		if (!characters.length) return []
+
+		characters.forEach((character, index) => {
+			if (characters.length !== index + 1) {
+				character.nextCharacter = characters[index + 1]
+			}
+			if (index !== 0) {
+				character.prevCharacter = characters[index - 1]
+			}
+		})
+
+		return characters
 	} catch (error) {}
 }
 

@@ -1,6 +1,28 @@
 .main-layout {
 	display: grid;
-	grid-template-columns: minmax(10px, 1fr) minmax(auto, 900px) minmax(10px, 1fr);
+	grid-template-columns:
+		minmax($layoutPaddingSmall, 1fr)
+		minmax(auto, $break-narrow)
+		minmax($layoutPaddingSmall, 1fr);
+
+	@include for-narrow-layout {
+		grid-template-columns:
+			minmax($layoutPaddingSmall, 1fr)
+			minmax(auto, $break-narrow)
+			minmax($layoutPaddingSmall, 1fr);
+	}
+	@include for-normal-layout {
+		grid-template-columns:
+			minmax($layoutPaddingMedium, 1fr)
+			minmax(auto, $break-normal)
+			minmax($layoutPaddingMedium, 1fr);
+	}
+	@include for-wide-layout {
+		grid-template-columns:
+			minmax($layoutPaddingLarge, 1fr)
+			minmax(auto, $break-wide)
+			minmax($layoutPaddingLarge, 1fr);
+	}
 }
 
 .main-layout > * {

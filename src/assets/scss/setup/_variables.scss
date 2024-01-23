@@ -11,10 +11,6 @@ $aura-clr: #6df059;
 
 $secondary-clr1: #fed5b3;
 
-$secondary-clr2: #6d59ff;
-$secondary-clr3: #000234;
-$secondary-clr4: #9da8b9;
-
 $logo-color: #b66d4d;
 $card-bg-clr: #3c3e44;
 
@@ -27,22 +23,16 @@ $rubik-burned: 'rubik-burned';
 
 // LAYOUT BREAKPOINTS
 $break-narrow: 600px;
-$break-normal: 768px;
-$break-wide: 900px;
+$break-normal: 800px;
+$break-wide: 1100px;
 
-$layoutPaddingLarge: 100px;
-$layoutPaddingMedium: 80px;
 $layoutPaddingSmall: 10px;
+$layoutPaddingMedium: 40px;
+$layoutPaddingLarge: 80px;
 
 $padded-break-narrow: $break-narrow + $layoutPaddingSmall * 2;
 $padded-break-normal: $break-normal + $layoutPaddingMedium * 2;
 $padded-break-wide: $break-wide + $layoutPaddingLarge * 2;
-
-// Breakpoints
-$mobile-breakpoint: 600px;
-$tablet-breakpoint: 768px;
-$normal-breakpoint: 900px;
-$wide-breakpoint: 1080px;
 
 //Heights
 $header-height: 17vh;

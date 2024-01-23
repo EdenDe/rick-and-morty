@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const EpisodePreview = ({ episode }) => {
 	return (
 		<section className='episode-preview flex flex-col space-between'>
-			<Link to={`/episode-page/${episode.id}`}>
+			<Link to={`/episode/${episode.id}`}>
 				<h2>{episode.name}</h2>
 			</Link>
 			<p>

@@ -1,5 +1,5 @@
 .app-header {
-	height: 17vh;
+	height: $header-height;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,7 +11,7 @@
 		text-align: center;
 
 		font-family: $rubik-extraBold;
-		font-size: clamp(rem(35px), 10vw, rem(80px));
+		font-size: clamp(rem(43px), 10vw, rem(80px));
 	}
 
 	span {
@@ -25,12 +25,6 @@
 		text-transform: uppercase;
 		font-family: $rubik-burned;
 	}
-
-	// img {
-	// 	padding: rem(16px);
-	// 	width: 100%;
-	// 	min-width: 330px;
-	// }
 
 	img {
 		width: inherit;
