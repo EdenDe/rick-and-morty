@@ -14,7 +14,7 @@ function App() {
 
 				<main className='route-view'>
 					<Routes>
-						<Route path='/character/:id' element={<CharacterPage />} />
+						<Route path='/episode/:id/character/:id' element={<CharacterPage />} />
 						<Route path='/episode/:id' element={<EpisodePage />} />
 						<Route path='/' element={<MainPage />} />
 					</Routes>

@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../assets/img/Logo.png'
 import rick from '../assets/img/Rick.png'
 import morty from '../assets/img/Morty.png'
 import { Link } from 'react-router-dom'

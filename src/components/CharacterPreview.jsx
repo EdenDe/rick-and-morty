@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const CharacterPreview = ({ character }) => {
+	const location = useLocation()
+
 	return (
 		<section className='character-preview'>
-			<Link to={`/character/${character.id}`}>
+			<Link to={`${location.pathname}/character/${character.id}`}>
 				<div className='img-wrapper' data-name={character.name}>
 					<img src={character.image} alt={character.name} />
 				</div>

@@ -7,6 +7,7 @@ import EpisodeFilter from '../components/EpisodeFilter'
 const MainPage = () => {
 	const dispatch = useDispatch()
 	const episodes = useSelector(storeState => storeState.episodes)
+	const filterBy = useSelector(storeState => storeState.filterBy)
 
 	useEffect(() => {
 		dispatch(loadEpisodes())
@@ -19,7 +20,7 @@ const MainPage = () => {
 
 	return (
 		<section className='main-page full-height'>
-			<EpisodeFilter onChangeFilter={onChangeFilter} />
+			<EpisodeFilter onChangeFilter={onChangeFilter} filter={filterBy} />
 			<AllLists data={episodes} dataType='episode' />
 		</section>
 	)

@@ -1,25 +1,32 @@
 import React, { useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { setCharacter } from '../store/rick-morty.action'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { setCharacter, setEpisode } from '../store/rick-morty.action'
 import { useDispatch, useSelector } from 'react-redux'
 
 const CharacterPage = () => {
 	const params = useParams()
 	const navigate = useNavigate()
-
-	const character = useSelector(storeState => storeState.currCharacter)
+	const location = useLocation()
 	const dispatch = useDispatch()
 
+	const episode = useSelector(storeState => storeState.currEpisode)
+	const character = useSelector(storeState => storeState.currCharacter)
+
 	useEffect(() => {
-		dispatch(setCharacter(params.id))
-	}, [params.id])
+		if (episode) {
+			dispatch(setCharacter(params.id))
+		} else {
+			const episodeId = location.pathname.split('/')[2]
+			dispatch(setEpisode(episodeId))
+		}
+	}, [params.id, episode])
 
 	const onNext = () => {
-		navigate(`/character/${character.nextCharacter.id}`)
+		navigate(`/episode/${episode.id}/character/${character.nextCharacter.id}`)
 	}
 
 	const onPrev = () => {
-		navigate(`/character/${character.prevCharacter.id}`)
+		navigate(`/episode/${episode.id}/character/${character.prevCharacter.id}`)
 	}
 
 	return (
@@ -48,7 +55,10 @@ const CharacterPage = () => {
 						<div className='episode-num-list flex'>
 							{character.episodeList?.map((episodeNum, index) => {
 								return (
-									<span key={episodeNum + index}>
+									<span
+										key={episodeNum + index}
+										className={episodeNum == episode.id ? 'currEpisode' : 'yo'}
+									>
 										{episodeNum + (index === character.episodeList.length - 1 ? ' ' : ',')}
 									</span>
 								)

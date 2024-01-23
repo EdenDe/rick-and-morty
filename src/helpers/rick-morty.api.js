@@ -1,11 +1,23 @@
 import axios from 'axios'
 
-const getAllEpisodes = async (filter = 'S01') => {
+const getAllEpisodes = async (filter = '1') => {
 	try {
-		const episodes = await axios.get(`https://rickandmortyapi.com/api/episode/?episode=${filter}`)
+		const episodes = await axios.get(`https://rickandmortyapi.com/api/episode/?episode=s0${filter}`)
 		if (!episodes.data.results.length) return []
 		return episodes.data.results
-	} catch (error) {}
+	} catch (error) {
+		console.log("couldn't get all episodes", error)
+	}
+}
+
+const getEpisode = async (filter = '1') => {
+	try {
+		const episode = await axios.get(`https://rickandmortyapi.com/api/episode/${filter}`)
+		if (!episode.data) return []
+		return episode.data
+	} catch (error) {
+		console.log("couldn't get the episode", error)
+	}
 }
 
 const getCharacters = async charactersArr => {
@@ -16,21 +28,14 @@ const getCharacters = async charactersArr => {
 		)
 
 		if (!characters.length) return []
-
-		characters.forEach((character, index) => {
-			if (characters.length !== index + 1) {
-				character.nextCharacter = characters[index + 1]
-			}
-			if (index !== 0) {
-				character.prevCharacter = characters[index - 1]
-			}
-		})
-
 		return characters
-	} catch (error) {}
+	} catch (error) {
+		console.log("couldn't get characters", error)
+	}
 }
 
 export const rickMortyApi = {
 	getAllEpisodes,
 	getCharacters,
+	getEpisode,
 }
