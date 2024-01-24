@@ -34,7 +34,7 @@ export function setCharacter(characterId) {
 	return async (dispatch, getState) => {
 		try {
 			const currCharacter = await rickAndMortyService.getCharacter(
-				getState().currEpisode.characters,
+				getState().currEpisode.charactersList,
 				characterId
 			)
 

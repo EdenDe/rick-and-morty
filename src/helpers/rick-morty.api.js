@@ -6,7 +6,7 @@ const getAllEpisodes = async (filter = '1') => {
 		if (!episodes.data.results.length) return []
 		return episodes.data.results
 	} catch (error) {
-		console.log("couldn't get all episodes", error)
+		console.log("couldn't get all episodes from API", error)
 	}
 }
 
@@ -16,7 +16,7 @@ const getEpisode = async (filter = '1') => {
 		if (!episode.data) return []
 		return episode.data
 	} catch (error) {
-		console.log("couldn't get the episode", error)
+		console.log("couldn't get the episode from API", error)
 	}
 }
 
@@ -30,7 +30,7 @@ const getCharacters = async charactersArr => {
 		if (!characters.length) return []
 		return characters
 	} catch (error) {
-		console.log("couldn't get characters", error)
+		console.log("couldn't get characters from API", error)
 	}
 }
 

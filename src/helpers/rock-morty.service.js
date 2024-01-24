@@ -4,7 +4,7 @@ const getEpisodes = async (filter = '1') => {
 	try {
 		return await rickMortyApi.getAllEpisodes(filter)
 	} catch (error) {
-		console.error('API Error:', error)
+		console.log("couldn't get all episodes", error)
 		throw error
 	}
 }
@@ -13,10 +13,11 @@ const getEpisode = async (episodes, episodeId) => {
 	try {
 		var currEpisode = episodes?.find(episode => episode.id == episodeId)
 		if (!currEpisode) currEpisode = await rickMortyApi.getEpisode(episodeId)
-		currEpisode.characters = await _setCharacters(currEpisode)
+		currEpisode.charactersList = await _setCharacters(currEpisode)
 		return currEpisode
 	} catch (error) {
-		console.error('API Error:', error)
+		console.log("couldn't get the episode", error)
+
 		throw error
 	}
 }
@@ -24,6 +25,7 @@ const getEpisode = async (episodes, episodeId) => {
 const getCharacter = (characters, characterId) => {
 	try {
 		var currCharacter = characters.find(character => character.id == characterId)
+		debugger
 		currCharacter.episodeList = currCharacter.episode.map(episode => {
 			return episode.split('/').at(-1)
 		})
@@ -36,6 +38,7 @@ const getCharacter = (characters, characterId) => {
 
 const _setCharacters = async episode => {
 	try {
+		debugger
 		const characterIDList = episode.characters.map(episode => {
 			return episode.split('/').at(-1)
 		})
@@ -50,7 +53,7 @@ const _setCharacters = async episode => {
 		})
 		return characters
 	} catch (error) {
-		console.error('API Error:', error)
+		console.log("couldn't get characters", error)
 		throw error
 	}
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { setCharacter, setEpisode } from '../store/rick-morty.action'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -29,15 +29,11 @@ const CharacterPage = () => {
 		navigate(`/episode/${episode.id}/character/${character.prevCharacter.id}`)
 	}
 
-	const onBack = () => {
-		navigate(-1)
-	}
-
 	return (
 		<section className='character-page custom-scrollbar'>
-			<button className='btn-back' onClick={onBack}>
+			<Link to={`/episode/${episode.id}`} className='btn-back'>
 				{'<'}
-			</button>
+			</Link>
 			<div className='character-card'>
 				<div className='img-wrapper flex'>
 					<img src={character.image} alt={character.name} />
