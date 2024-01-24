@@ -56,6 +56,10 @@ const CharacterPage = () => {
 						<h5> Last seen location: </h5>
 						<span> {character.location?.name}</span>
 					</div>
+					<div className='flex align-center'>
+						<h5> Origin: </h5>
+						<span> {character.origin?.name}</span>
+					</div>
 
 					<div>
 						<h5> Was seen in episodes: </h5>
