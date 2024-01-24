@@ -1,20 +1,21 @@
 .episode-preview {
-	background-color: $secondary-clr1;
 	box-shadow: $box-shadow;
 	border-radius: $border-radius;
 	overflow: hidden;
 
 	position: relative;
-	height: 120px;
+	height: 130px;
 	padding: em(10px);
 	text-align: center;
+
+	@include themify('background-color', 'bg-ep-card');
 
 	&:hover {
 		opacity: 0.7;
 	}
 
 	h2 {
-		font-family: $rubik-bold;
+		font-size: em(23px);
 
 		&:hover {
 			scale: 1.1;

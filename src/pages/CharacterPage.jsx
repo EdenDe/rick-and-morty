@@ -39,7 +39,7 @@ const CharacterPage = () => {
 				{'<'}
 			</button>
 			<div className='character-card'>
-				<div className='img-wrapper flex justify-center'>
+				<div className='img-wrapper flex'>
 					<img src={character.image} alt={character.name} />
 				</div>
 				<div className='character-details flex flex-col'>

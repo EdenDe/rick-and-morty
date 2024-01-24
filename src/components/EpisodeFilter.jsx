@@ -27,7 +27,10 @@ const EpisodeFilter = ({ onChangeFilter, filter }) => {
 	return (
 		<section className='episode-filter'>
 			<div className={`custom-select ${isDropdownActive && 'active'}`} ref={dropdown}>
-				<button className='select-button' onClick={() => setIsDropdownActive(!isDropdownActive)}>
+				<button
+					className='select-button flex align-center'
+					onClick={() => setIsDropdownActive(!isDropdownActive)}
+				>
 					<span className='selected-value'>Season {filter}</span>
 					<span className='arrow'></span>
 				</button>

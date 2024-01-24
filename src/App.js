@@ -4,13 +4,19 @@ import { Routes, Route, HashRouter as Router } from 'react-router-dom'
 import EpisodePage from './pages/EpisodePage'
 import CharacterPage from './pages/CharacterPage'
 import AppHeader from './components/AppHeader'
-import Footer from './components/Footer'
+import AppFooter from './components/AppFooter'
+import { useEffect, useState } from 'react'
+import { cookieService } from './helpers/cookie.service'
 
 function App() {
+	const [theme, setTheme] = useState(cookieService.getCookie('theme'))
+
+	useEffect(() => {}, [])
+
 	return (
 		<Router>
-			<section className='main-layout'>
-				<AppHeader />
+			<section className={`main-layout ${theme}-theme`}>
+				<AppHeader setTheme={setTheme} />
 
 				<main className='route-view'>
 					<Routes>
@@ -20,7 +26,7 @@ function App() {
 					</Routes>
 				</main>
 
-				<Footer />
+				<AppFooter />
 			</section>
 		</Router>
 	)

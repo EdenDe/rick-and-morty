@@ -1,8 +1,8 @@
 // Colors
 $clr1: #ffffff;
-$clr2: #e3e3eb;
-$clr3: rgb(155, 155, 155);
-$clr4: rgb(96, 96, 96);
+$clr2: #f3eeeb;
+$clr3: #9b9b9b;
+$clr4: #606060;
 $clr5: #333333;
 
 $rick-clr: #a3a3cd;
@@ -11,16 +11,34 @@ $aura-clr: #6df059;
 
 $secondary-clr1: #fed5b3;
 
+$themes: (
+	light: (
+		bg: $clr2,
+		fc: $clr5,
+		header-bg: $clr1,
+		bg-ep-card: $secondary-clr1,
+		filter-clr: $rick-clr,
+		scrollbar-clr: $clr1,
+	),
+	dark: (
+		bg: $clr4,
+		fc: $clr1,
+		header-bg: $clr5,
+		bg-ep-card: $rick-clr,
+		filter-clr: $morty-clr,
+		scrollbar-clr: $clr2,
+	),
+);
+
 //FONTS
-$rubik-light: 'rubik-light';
-$rubik: 'rubik';
-$rubik-bold: 'rubik-bold';
-$rubik-extraBold: 'rubik-extrabold';
-$rubik-burned: 'rubik-burned';
+$rubik-light: 'rubik-light', cursive, 'sans serif';
+$rubik: 'rubik', cursive, 'sans serif';
+$rubik-extraBold: 'rubik-extrabold', cursive, 'sans serif';
+$rubik-burned: 'rubik-burned', 'rubik', cursive, 'sans serif';
 
 // LAYOUT BREAKPOINTS
-$break-narrow: 600px;
-$break-normal: 800px;
+$break-narrow: 700px;
+$break-normal: 900px;
 $break-wide: 1100px;
 
 $layoutPaddingSmall: 10px;

@@ -1,32 +1,18 @@
 import React from 'react'
-import rick from '../assets/img/Rick.png'
-import morty from '../assets/img/Morty.png'
+
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
 
-const AppHeader = () => {
-	const Logo = () => {
-		return (
-			<h1>
-				<span>
-					R
-					<img src={rick} alt='i' />
-					ck
-				</span>
-				<span>and</span>
-				<span>
-					M
-					<img src={morty} alt='o' />
-					rty
-				</span>
-			</h1>
-		)
+const AppHeader = ({ setTheme }) => {
+	const onToggleTheme = () => {
+		setTheme(preTheme => (preTheme === 'light' ? 'dark' : 'light'))
 	}
-
 	return (
-		<section className='app-header flex justify-center align-center'>
+		<section className='app-header full'>
 			<Link to='/'>
 				<Logo />
 			</Link>
+			<button className='btn-toggle-theme' onClick={onToggleTheme}></button>
 		</section>
 	)
 }

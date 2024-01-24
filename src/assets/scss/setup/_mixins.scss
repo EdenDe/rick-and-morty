@@ -22,3 +22,18 @@
 		@content;
 	}
 }
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin themify($property, $key, $themes: $themes) {
+	@each $theme, $colors in $themes {
+		&.#{$theme}-theme,
+		.#{$theme}-theme & {
+			#{$property}: map-get($colors, $key);
+		}
+	}
+}

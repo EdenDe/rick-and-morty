@@ -1,5 +1,5 @@
 .all-list {
-	height: calc($main-height - 10vh);
+	height: calc(100% - 10vh - rem(10px));
 
 	display: grid;
 	padding: rem(10px);

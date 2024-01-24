@@ -2,14 +2,13 @@
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	height: 10vh;
 
 	.custom-select {
 		position: relative;
-
 		width: 300px;
-
-		font-size: 1.15rem;
-		color: #000;
+		font-size: em(20px);
+		color: $clr5;
 		margin: em(10px);
 
 		&.active {
@@ -26,14 +25,12 @@
 		}
 
 		.select-button {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			@include themify('background-color', 'filter-clr');
 
+			justify-content: space-between;
 			padding: rem(10px) rem(20px);
 			border: 2px solid transparent;
 			border-radius: $border-radius;
-			background-color: $rick-clr;
 			color: $clr1;
 			box-shadow: $box-shadow;
 
@@ -64,7 +61,6 @@
 			margin-top: em(5px);
 
 			visibility: hidden;
-
 			opacity: 0;
 
 			li {

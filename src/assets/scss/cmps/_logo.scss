@@ -1,0 +1,26 @@
+.logo {
+	display: flex;
+	column-gap: 2vw;
+
+	text-align: center;
+
+	font-family: $rubik-extraBold;
+	font-size: clamp(rem(43px), 10vw, rem(80px));
+
+	span {
+		display: flex;
+		align-items: center;
+	}
+
+	span:nth-child(2) {
+		font-size: clamp(rem(15px), 5vw, rem(40px));
+		color: $aura-clr;
+		text-transform: uppercase;
+		font-family: $rubik-burned;
+	}
+
+	img {
+		width: inherit;
+		width: clamp(rem(40px), 10vw, rem(80px));
+	}
+}

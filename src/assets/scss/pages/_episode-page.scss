@@ -1,9 +1,14 @@
 .episode-page {
-	:is(h2, h3) {
-		margin-inline-start: rem(10px);
-	}
+	.episode-details {
+		height: 10vh;
 
-	h2 {
-		font-size: em(30px);
+		:is(h2, p) {
+			margin-inline-start: rem(10px);
+			margin-bottom: rem(2px);
+		}
+
+		h2 {
+			font-size: clamp(rem(25px), 7vw, rem(35px));
+		}
 	}
 }

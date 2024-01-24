@@ -23,6 +23,9 @@
 			minmax(auto, $break-wide)
 			minmax($layoutPaddingLarge, 1fr);
 	}
+
+	@include themify('color', 'fc');
+	@include themify('background-color', 'bg');
 }
 
 .main-layout > * {
@@ -38,13 +41,5 @@
 
 	@include for-mobile-layout {
 		height: $main-height + 5vh;
-	}
-}
-
-.app-header {
-	height: $header-height;
-
-	@include for-mobile-layout {
-		height: $header-height - 5vh;
 	}
 }

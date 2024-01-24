@@ -1,28 +1,47 @@
 .app-header {
-	h1 {
-		display: flex;
-		column-gap: 2vw;
+	height: $header-height;
+	position: relative;
+	@include flex-center;
+	@include themify('background-color', 'header-bg');
+	padding: em(5px);
+	box-shadow: $box-shadow;
 
-		text-align: center;
-
-		font-family: $rubik-extraBold;
-		font-size: clamp(rem(43px), 10vw, rem(80px));
+	.main-layout.dark-theme & .btn-toggle-theme {
+		box-shadow: 1px 1px 1px 0px black;
+		&:after {
+			content: url(../../img/moon.png);
+		}
 	}
 
-	span {
-		display: flex;
-		align-items: center;
+	.main-layout.light-theme & .btn-toggle-theme {
+		box-shadow: 1px 1px 1px 0px $clr3;
+		&:after {
+			content: url(../../img/sun.png);
+		}
 	}
 
-	span:nth-child(2) {
-		font-size: clamp(rem(15px), 5vw, rem(40px));
-		color: $aura-clr;
-		text-transform: uppercase;
-		font-family: $rubik-burned;
+	.btn-toggle-theme {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: em(5px);
+
+		@include flex-center;
+		width: 40px;
+		height: 40px;
+		background-color: transparent;
+		border: none;
+		border-radius: $border-radius;
 	}
 
-	img {
-		width: inherit;
-		width: clamp(rem(40px), 10vw, rem(80px));
+	@include for-mobile-layout {
+		height: $header-height - 5vh;
+		align-items: end;
+
+		.btn-toggle-theme {
+			margin: em(2px);
+			width: 35px;
+			height: 35px;
+		}
 	}
 }

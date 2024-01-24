@@ -20,9 +20,12 @@ const EpisodePage = () => {
 
 	return (
 		<section className='episode-page custom-scrollbar'>
-			<h2>{episode.name}</h2>
-			<div className='flex align-center justify-between'>
-				<h3>{episode.air_date}</h3>
+			<div className='episode-details flex align-center justify-between'>
+				<div>
+					<h2>{episode.name}</h2>
+					<p>{episode.air_date}</p>
+				</div>
+
 				<button className='btn-back' onClick={onBack}>
 					{'<'}
 				</button>
